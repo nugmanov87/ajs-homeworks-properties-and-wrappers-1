@@ -1,14 +1,17 @@
 import sort from '../app';
 
 test('Sort check', () => {
-  const obj = {
-    name: 'мечник',
-    health: 10,
-    level: 2,
-    attack: 80,
-    defence: 40,
-  };
-  const received = sort(obj, ['name', 'level']);
+  const received = sort(
+    {
+      name: 'мечник',
+      health: 10,
+      level: 2,
+      attack: 80,
+      defence: 40,
+    },
+    ['name', 'level'],
+  );
+
   const expected = [
     { key: 'name', value: 'мечник' },
     { key: 'level', value: 2 },
