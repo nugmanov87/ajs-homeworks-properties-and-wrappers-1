@@ -32,4 +32,4 @@ export default function sort(hero, sortValue) {
   const arrReturn = arrObj.concat(arrTemp);
   return arrReturn;
 }
-sort(obj, ['name', 'level']);
+console.log(sort(obj, ['name', 'level']));
