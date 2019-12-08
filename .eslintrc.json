@@ -1,22 +1,15 @@
 {
+  "extends": "airbnb-base",
   "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
+     "es6": true,
+     "browser": true,
+     "jest": true
   },
-  "extends": ["airbnb-base"],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint"],
   "rules": {
-    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
-    "import/extensions": ["error", "ignorePackages"]
+    "no-restricted-syntax": [
+      "error",
+      "LabeledStatement",
+      "WithStatement"
+    ]
   }
 }
