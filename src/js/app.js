@@ -6,13 +6,13 @@ const obj = {
   defence: 40,
 };
 
-export default function sort(hero, sortValue) {
+export default function orderByProps(objInput, sortValue) {
   const arrObj = [];
-  for (const key in hero) {
-    if (Object.prototype.hasOwnProperty.call(hero, key)) {
+  for (const key in objInput) {
+    if (Object.prototype.hasOwnProperty.call(objInput, key)) {
       arrObj.push({
         key,
-        value: hero[key],
+        value: objInput[key],
       });
     }
   }
@@ -32,4 +32,4 @@ export default function sort(hero, sortValue) {
   const arrReturn = arrObj.concat(arrTemp);
   return arrReturn;
 }
-sort(obj, ['name', 'level']);
+orderByProps(obj, ['name', 'level']);
