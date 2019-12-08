@@ -1,17 +1,14 @@
-import sort from '../app';
+import orderByProps from '../app';
 
-test('Sort check', () => {
-  const received = sort(
-    {
-      name: 'мечник',
-      health: 10,
-      level: 2,
-      attack: 80,
-      defence: 40,
-    },
-    ['name', 'level'],
-  );
-
+test('Проверка сортировки', () => {
+  const obj = {
+    name: 'мечник',
+    health: 10,
+    level: 2,
+    attack: 80,
+    defence: 40,
+  };
+  const received = orderByProps(obj, ['name', 'level']);
   const expected = [
     { key: 'name', value: 'мечник' },
     { key: 'level', value: 2 },
