@@ -7,17 +7,17 @@
 export default function orderByProps(obj, order) {
   const newOrderArray = [];
 
-  for (let i = 0; i < order.length; i++) {
-    if (order[i] in obj) {
+  order.forEach((item) => {
+    if (item in obj) {
       newOrderArray.push({
-        key: order[i],
-        value: `${obj[order[i]]}`,
+        key: item,
+        value: `${obj[item]}`,
       });
 
-      const deleteditem = order[i];
+      const deleteditem = item;
       delete obj[deleteditem];
     }
-  }
+  });
 
   const newArray = [];
 
@@ -33,9 +33,7 @@ export default function orderByProps(obj, order) {
     if (a.key > b.key) return 1;
   });
 
-  for (let i = 0; i < newArray.length; i++) {
-    newOrderArray.push(newArray[i]);
-  }
+  const resultArray = [...newOrderArray, ...newArray];
 
-  return newOrderArray;
+  return resultArray;
 }
